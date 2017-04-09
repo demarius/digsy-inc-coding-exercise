@@ -1,0 +1,18 @@
+<h2> Your next action</h2>
+
+<% if !@action.nil? %>
+  <div>
+    Directions: <%= @action.name %>
+  </div>
+  <div>
+      <%= button_to "Perform", {action: 'update', id: @action.id, data: { completed: true } }, method: 'patch' %>
+      <%= button_to "Ignore", {action: 'update', id: @action.id, data: { completed: false } }, method: 'patch' %>
+  </div>
+<% else %>
+  <div>
+    No actions to display. Please contact an admin for further instruction.
+  </div>
+<% end %>
+
+
+<%= link_to "Admin panel", agent_actions_path %>

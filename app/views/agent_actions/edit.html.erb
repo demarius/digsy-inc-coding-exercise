@@ -1,0 +1,29 @@
+<div class="alert"><%= flash[:action]%></div>
+
+<h2>Edit Action</h2>
+
+<%= form_for @selected_action, html: {class: 'ink-form all-50 small-100 tiny-100'} do |f| %>
+
+  <div class="control-group required">
+    <%= f.label :icon %>
+    <div class="control">
+      <%= f.text_field :icon %>
+    </div>
+  </div>
+
+  <div class="control-group required">
+    <%= f.label :name %>
+    <div class="control">
+      <%= f.text_area :name %>
+    </div>
+  </div>
+  <div class="control-group column-group">
+    <div class="control all-80">&nbsp;
+    </div>
+    <div class="control all-20">
+      <%= f.submit "Update", class: 'ink-button' %>
+    </div>
+  </div>
+<% end %>
+
+<%= link_to "Cancel", agent_actions_path %>

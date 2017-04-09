@@ -1,0 +1,17 @@
+<h2>Agent Action</h2>
+
+<div class ="">
+    <%= @action.icon %>
+</div>
+<div class ="">
+    Directions: <%= @action.name %>
+</div>
+<div class ="">
+    Completed: <%= @action.completed %>
+</div>
+<div class ="">
+    <%= link_to "Edit", [:edit, @action] %>
+</div>
+<div class ="">
+    <%= link_to "Return to action list", agent_actions_path %>
+</div>

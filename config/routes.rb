@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :agent_actions
+  root to: "agent_actions#index"
+  resources :agents, only: [:index, :update]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

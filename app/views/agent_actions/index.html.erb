@@ -1,0 +1,19 @@
+<h2>Current TODOs:</h2>
+
+<ul>
+  <% @actions.each do |action| %>
+    <% icon ="glyphicon glyphicon-#{action.icon}".html_safe %>
+    <li>
+      <span class="glyphicon glyphicon-<% action.icon %>"></span>
+      <%= link_to action.name, [:edit, action]  %>
+    </li>
+  <% end %>
+</ul>
+
+<h2>Are you an admin?</h2>
+Please select an action from the list, or - 
+
+<%= link_to "Create new action", new_agent_action_path %>
+
+<h2>Are you an agent?</h2>
+If so, please click <%= link_to "here", agents_path %>
